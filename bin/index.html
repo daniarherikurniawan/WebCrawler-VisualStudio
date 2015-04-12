@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Crawler</title>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="onepagescroller/onepage-scroll.css">
+</head>
+
+<body>
+	<div class="main">
+			<!-- Homepage -->
+			<section class="page1">
+				<!-- Logo -->
+				<div class="col-xs-12 col-sm-offset-1 col-sm-7 col-sm-offset-1 col-md-5 logo container">
+					<a href="result.php">
+						<div class="text-center">
+						<img src="image/logo.png"  class="" alt="The Crawler">
+						</div>
+					</a>
+				</div>
+
+				<!-- Search Box -->
+				<div class="clearfix"></div>
+				<div class="col-xs-12 col-sm-offset-1 col-sm-7 col-sm-offset-1 col-md-5">
+					<form action="result.php" method="GET">
+						<div class="form-group has-warning has-feedback">
+							<label class="control-label" for="inputSuccess2"> Cari sesuatu</label>
+							<input name="q" type="text" class="form-control search-box" id="inputSuccess2">
+							<input name="p" type="hidden">
+							<button type="submit" class="glyphicon glyphicon-search form-control-feedback"></button>
+						</div>
+					</form>	
+				</div>
+
+				<div class="clearfix"></div>
+				<!-- Tombol "I'm Feeling Crawl" -->
+				<a type="button" class="btn btn-lg crawl-btn col-xs-offset-2 col-xs-8 col-sm-offset-4 col-sm-5 col-md-4" href="#" onclick="goCrawl()">
+					<span class="glyphicon glyphicon-hand-down"></span> I'm Feeling Like to Crawl
+				</a>
+				<!-- Tombol i(about) -->
+				<a href="#" type="button" class="btn btn-lg goabout-btn" onclick="goAbout()">
+					<span class="glyphicon glyphicon-info-sign"></span>
+				</a>
+			</section>
+
+			<!-- Meet the Crawler -->
+			<section class="page2">
+				<div class="page-header col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8">
+					<h1 class="text-center" >Meet The Crawler</h1>
+				</div>
+
+				<form action="starter.php" method="GET">
+					<!-- Insert URL -->
+					<div class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-5 col-md-offset-1 col-md-6 form-horizontal">
+						<div class="judul form-group text-right">
+							<p>Insert url</p>
+						</div>
+						<div class="url-group">
+							<div class="form-group" id="fg1">
+								<!-- URL Textbox -->
+								<label for="inputURL" class="control-label col-xs-3 col-sm-4 col-md-2">URL 1</label>
+								<div class="col-xs-9 col-sm-8 col-md-10">
+									<input name='urlList[]' type="text" id="inputURL" class="form-control">
+								</div>						
+							</div>
+						</div>	
+						<div class="text-right">
+							<!-- Add & Remove URL's TextBox -->
+							<a href="#" class="btn gocrawl-btn" id="removeUrl">-</a>
+							<a href="#" class="btn gocrawl-btn" id="addUrl">+</a>
+						</div>
+					</div>
+
+					<!-- Depth & Algoritma -->
+					<div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-5 col-md-4 form-horizontal">
+						<!-- Mode Algoritma -->
+						<div class="form-group">
+							<label class="control-label col-xs-3 col-sm-5 col-md-4">Algoritma</label>
+							<!-- Radio BFS -->
+							<label class="checkbox-inline">
+								<input type="radio" name="algoritma" value="BFS" checked>
+								BFS
+							</label>
+							<!-- Radio DFS -->
+							<label class="checkbox-inline">
+								<input type="radio" name="algoritma" value="DFS" >
+								DFS
+							</label>
+						</div>
+
+						<!-- Depth -->
+						<div class="form-group">
+							<label for="inputDepth" class="control-label col-xs-3 col-sm-5 col-md-4">Depth</label>
+							<div class="col-xs-9 col-sm-7 col-md-8">
+								<input name="depth" type="text" id="inputDepth" class="form-control">
+							</div>
+						</div>
+						<!-- Tombol "Go Crawl" -->
+						<div class="col-xs-12 col-sm-offset-7 col-sm-5 crawl">
+							<button type="submit" class="btn gocrawl-btn btn-block"><span class="glyphicon glyphicon-off"></span> Go Crawl!</button>
+						</div>
+					</div>
+				</form>
+			</section>
+
+			<!-- About -->
+			<section class="page3">
+				<div class="clearfix"></div>
+				<div class="jumbotron">
+				  <h1>About</h1>
+				  <p>
+						Kami adalah mahasiswa prodi Teknik Informatika Institut Teknologi Bandung. Web crawler ini kami buat untuk memenuhi tugas besar ke 2 mata kuliah Strategi Algoritma. Tim kami bernama "Warteg AERO". Nama tersebut diambil dari nama sebuah warung makan di jalan Tubagus Ismail, Bandung yang pelayanannya cepat, rasanya enak dan cukup murah.
+						Sebagai seorang programmer, kami pun ingin membuat aplikasi seefisien mungkin seperti "Warteg AERO". Nama kami adalah Eric, Edmund Ophie, dan Daniar Heri Kurniawan. Kami secara tidak sengaja dipertemukan dalam satu kelompok yang super ini.
+						</p>
+						<p class="hidden-xs">
+						Program ini merupakan hasil dari pengaplikasian algoritma DFS dan BFS yang telah diajarkan di kelas Strategi Algoritma. Program ini berfungsi layaknya seperti search engine pada umumnya yang bisa mengolah keywords kemudian menampilkan URL yang mengandung keywords tersebut. 
+				  	</p>
+				  <br/>
+				  <a class="btn btn-primary btn-lg about-btn" role="button" onclick="goHome()"><span class="glyphicon glyphicon-home"></span> Back to home</a>
+				</div>
+				
+				<!-- Copyright & Creator -->
+				<div class="col-xs-12 copyr">
+					<div class="name col-xs-12">
+						<div class="creator col-xs-4">Edmund</div>
+						<div class="creator middle-creator col-xs-4">Eric</div>
+						<div class="creator col-xs-4">Daniar</div>
+					</div>
+					<div class="clearfix"></div>
+					&copy; Copyright 2014 The Crawler Team
+				</div>
+			</section>
+	</div>	
+
+	<!-- Load Javascript -->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="onepagescroller/jquery.onepage-scroll.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
